@@ -12,17 +12,8 @@
 		F24FF11119FD94FC002F90E4 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F24FF11019FD94FC002F90E4 /* main.m */; };
 		F24FF11319FD94FC002F90E4 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F24FF11219FD94FC002F90E4 /* Images.xcassets */; };
 		F24FF11619FD94FC002F90E4 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = F24FF11419FD94FC002F90E4 /* MainMenu.xib */; };
+		F2BF95CE19FD97CE00FFF7DB /* LEDController.m in Sources */ = {isa = PBXBuildFile; fileRef = F2BF95CD19FD97CE00FFF7DB /* LEDController.m */; };
 /* End PBXBuildFile section */
-
-/* Begin PBXContainerItemProxy section */
-		F24FF11C19FD94FC002F90E4 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = F24FF10019FD94FB002F90E4 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = F24FF10719FD94FC002F90E4;
-			remoteInfo = LEDControllerApp;
-		};
-/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		627CE90C73FAE1B2BD42DAB5 /* Pods-LEDControllerApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LEDControllerApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-LEDControllerApp/Pods-LEDControllerApp.release.xcconfig"; sourceTree = "<group>"; };
@@ -35,7 +26,8 @@
 		F24FF11019FD94FC002F90E4 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		F24FF11219FD94FC002F90E4 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		F24FF11519FD94FC002F90E4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
-		F24FF11B19FD94FC002F90E4 /* LEDControllerAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LEDControllerAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		F2BF95CC19FD97CE00FFF7DB /* LEDController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LEDController.h; sourceTree = "<group>"; };
+		F2BF95CD19FD97CE00FFF7DB /* LEDController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LEDController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -44,13 +36,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				27B86FE935F3A83CA0598E3A /* libPods-LEDControllerApp.a in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		F24FF11819FD94FC002F90E4 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -88,7 +73,6 @@
 			isa = PBXGroup;
 			children = (
 				F24FF10819FD94FC002F90E4 /* LEDControllerApp.app */,
-				F24FF11B19FD94FC002F90E4 /* LEDControllerAppTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -101,6 +85,8 @@
 				F24FF11219FD94FC002F90E4 /* Images.xcassets */,
 				F24FF11419FD94FC002F90E4 /* MainMenu.xib */,
 				F24FF10B19FD94FC002F90E4 /* Supporting Files */,
+				F2BF95CC19FD97CE00FFF7DB /* LEDController.h */,
+				F2BF95CD19FD97CE00FFF7DB /* LEDController.m */,
 			);
 			path = LEDControllerApp;
 			sourceTree = "<group>";
@@ -136,24 +122,6 @@
 			productReference = F24FF10819FD94FC002F90E4 /* LEDControllerApp.app */;
 			productType = "com.apple.product-type.application";
 		};
-		F24FF11A19FD94FC002F90E4 /* LEDControllerAppTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = F24FF12819FD94FC002F90E4 /* Build configuration list for PBXNativeTarget "LEDControllerAppTests" */;
-			buildPhases = (
-				F24FF11719FD94FC002F90E4 /* Sources */,
-				F24FF11819FD94FC002F90E4 /* Frameworks */,
-				F24FF11919FD94FC002F90E4 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				F24FF11D19FD94FC002F90E4 /* PBXTargetDependency */,
-			);
-			name = LEDControllerAppTests;
-			productName = LEDControllerAppTests;
-			productReference = F24FF11B19FD94FC002F90E4 /* LEDControllerAppTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -165,10 +133,6 @@
 				TargetAttributes = {
 					F24FF10719FD94FC002F90E4 = {
 						CreatedOnToolsVersion = 6.1;
-					};
-					F24FF11A19FD94FC002F90E4 = {
-						CreatedOnToolsVersion = 6.1;
-						TestTargetID = F24FF10719FD94FC002F90E4;
 					};
 				};
 			};
@@ -186,7 +150,6 @@
 			projectRoot = "";
 			targets = (
 				F24FF10719FD94FC002F90E4 /* LEDControllerApp */,
-				F24FF11A19FD94FC002F90E4 /* LEDControllerAppTests */,
 			);
 		};
 /* End PBXProject section */
@@ -198,13 +161,6 @@
 			files = (
 				F24FF11319FD94FC002F90E4 /* Images.xcassets in Resources */,
 				F24FF11619FD94FC002F90E4 /* MainMenu.xib in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		F24FF11919FD94FC002F90E4 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -250,25 +206,11 @@
 			files = (
 				F24FF11119FD94FC002F90E4 /* main.m in Sources */,
 				F24FF10F19FD94FC002F90E4 /* AppDelegate.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		F24FF11719FD94FC002F90E4 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
+				F2BF95CE19FD97CE00FFF7DB /* LEDController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		F24FF11D19FD94FC002F90E4 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = F24FF10719FD94FC002F90E4 /* LEDControllerApp */;
-			targetProxy = F24FF11C19FD94FC002F90E4 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		F24FF11419FD94FC002F90E4 /* MainMenu.xib */ = {
@@ -382,42 +324,6 @@
 			};
 			name = Release;
 		};
-		F24FF12919FD94FC002F90E4 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				COMBINE_HIDPI_IMAGES = YES;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(DEVELOPER_FRAMEWORKS_DIR)",
-					"$(inherited)",
-				);
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = LEDControllerAppTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/LEDControllerApp.app/Contents/MacOS/LEDControllerApp";
-			};
-			name = Debug;
-		};
-		F24FF12A19FD94FC002F90E4 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				COMBINE_HIDPI_IMAGES = YES;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(DEVELOPER_FRAMEWORKS_DIR)",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = LEDControllerAppTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/LEDControllerApp.app/Contents/MacOS/LEDControllerApp";
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -435,15 +341,6 @@
 			buildConfigurations = (
 				F24FF12619FD94FC002F90E4 /* Debug */,
 				F24FF12719FD94FC002F90E4 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		F24FF12819FD94FC002F90E4 /* Build configuration list for PBXNativeTarget "LEDControllerAppTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				F24FF12919FD94FC002F90E4 /* Debug */,
-				F24FF12A19FD94FC002F90E4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
