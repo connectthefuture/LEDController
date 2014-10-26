@@ -1,0 +1,10 @@
+PODS:
+  - ORSSerialPort (1.0.3)
+
+DEPENDENCIES:
+  - ORSSerialPort
+
+SPEC CHECKSUMS:
+  ORSSerialPort: 5c13378f2604cefeb324581840f7de154bf443e4
+
+COCOAPODS: 0.34.4
