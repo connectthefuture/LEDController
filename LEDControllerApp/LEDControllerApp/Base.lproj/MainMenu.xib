@@ -13,6 +13,7 @@
         <customObject id="-3" userLabel="Application" customClass="NSObject"/>
         <customObject id="Voe-Tx-rLC" customClass="AppDelegate">
             <connections>
+                <outlet property="ledController" destination="OD4-TG-2oO" id="hIz-ot-bW3"/>
                 <outlet property="window" destination="QvC-M9-y7g" id="gIp-Ho-8D9"/>
             </connections>
         </customObject>
@@ -667,40 +668,40 @@
             </items>
         </menu>
         <window title="LEDControllerApp" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" animationBehavior="default" id="QvC-M9-y7g">
-            <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
+            <windowStyleMask key="styleMask" titled="YES"/>
             <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
-            <rect key="contentRect" x="335" y="390" width="382" height="237"/>
+            <rect key="contentRect" x="335" y="390" width="338" height="197"/>
             <rect key="screenRect" x="0.0" y="0.0" width="1280" height="777"/>
             <view key="contentView" id="EiT-Mj-1SZ">
-                <rect key="frame" x="0.0" y="0.0" width="382" height="237"/>
+                <rect key="frame" x="0.0" y="0.0" width="338" height="197"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <slider verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="eU9-gv-oW1">
-                        <rect key="frame" x="18" y="200" width="227" height="20"/>
+                        <rect key="frame" x="18" y="160" width="227" height="20"/>
                         <sliderCell key="cell" continuous="YES" state="on" alignment="left" maxValue="1" doubleValue="0.5" tickMarkPosition="above" sliderType="linear" id="ObT-Ms-d9Z"/>
                         <connections>
-                            <action selector="takeDoubleValueFrom:" target="Pq2-eP-X18" id="dJl-2d-9wA"/>
                             <binding destination="OD4-TG-2oO" name="value" keyPath="self.redValue" id="jhP-JF-enD"/>
+                            <binding destination="OD4-TG-2oO" name="enabled" keyPath="self.serialPortIsOpen" id="kTf-jT-XoI"/>
                         </connections>
                     </slider>
                     <slider verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jpP-eA-ZyN">
-                        <rect key="frame" x="18" y="174" width="227" height="20"/>
+                        <rect key="frame" x="18" y="134" width="227" height="20"/>
                         <sliderCell key="cell" continuous="YES" state="on" alignment="left" maxValue="1" doubleValue="0.5" tickMarkPosition="above" sliderType="linear" id="Dqs-lC-Krh"/>
                         <connections>
-                            <action selector="takeDoubleValueFrom:" target="1KM-xU-qdR" id="mqJ-4Q-aCk"/>
                             <binding destination="OD4-TG-2oO" name="value" keyPath="self.greenValue" id="1fR-lC-Zfd"/>
+                            <binding destination="OD4-TG-2oO" name="enabled" keyPath="self.serialPortIsOpen" id="paB-Ez-E1w"/>
                         </connections>
                     </slider>
                     <slider verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="c9n-GT-CWl">
-                        <rect key="frame" x="18" y="146" width="227" height="20"/>
+                        <rect key="frame" x="18" y="106" width="227" height="20"/>
                         <sliderCell key="cell" continuous="YES" state="on" alignment="left" maxValue="1" doubleValue="0.5" tickMarkPosition="above" sliderType="linear" id="Dlm-iw-UoI"/>
                         <connections>
-                            <action selector="takeDoubleValueFrom:" target="hcm-uo-Gi9" id="8hR-qc-WFf"/>
                             <binding destination="OD4-TG-2oO" name="value" keyPath="self.blueValue" id="a3a-VZ-O9C"/>
+                            <binding destination="OD4-TG-2oO" name="enabled" keyPath="self.serialPortIsOpen" id="VeE-gH-Z6J"/>
                         </connections>
                     </slider>
                     <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Pq2-eP-X18">
-                        <rect key="frame" x="257" y="199" width="61" height="22"/>
+                        <rect key="frame" x="257" y="159" width="61" height="22"/>
                         <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" id="ydh-ql-nlf">
                             <numberFormatter key="formatter" formatterBehavior="default10_4" numberStyle="decimal" minimumIntegerDigits="1" maximumIntegerDigits="2000000000" maximumFractionDigits="3" id="mfy-tL-Mfn">
                                 <real key="minimum" value="0.0"/>
@@ -714,11 +715,12 @@
                             <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                         </textFieldCell>
                         <connections>
-                            <action selector="takeDoubleValueFrom:" target="eU9-gv-oW1" id="dPm-p2-qRX"/>
+                            <binding destination="OD4-TG-2oO" name="value" keyPath="self.redValue" id="LWH-ar-qDs"/>
+                            <binding destination="OD4-TG-2oO" name="enabled" keyPath="self.serialPortIsOpen" id="zFr-Kw-rlJ"/>
                         </connections>
                     </textField>
                     <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hcm-uo-Gi9">
-                        <rect key="frame" x="257" y="145" width="61" height="22"/>
+                        <rect key="frame" x="257" y="105" width="61" height="22"/>
                         <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" id="D40-T7-aVW">
                             <numberFormatter key="formatter" formatterBehavior="default10_4" numberStyle="decimal" minimumIntegerDigits="1" maximumIntegerDigits="2000000000" maximumFractionDigits="3" id="ya4-ZL-lnR">
                                 <real key="minimum" value="0.0"/>
@@ -732,11 +734,37 @@
                             <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                         </textFieldCell>
                         <connections>
-                            <action selector="takeDoubleValueFrom:" target="c9n-GT-CWl" id="aaI-GG-k32"/>
+                            <binding destination="OD4-TG-2oO" name="value" keyPath="self.blueValue" id="2aA-JV-Xnk"/>
+                            <binding destination="OD4-TG-2oO" name="enabled" keyPath="self.serialPortIsOpen" id="7sR-Oj-yqf"/>
+                        </connections>
+                    </textField>
+                    <slider verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="XKu-Q1-OW1">
+                        <rect key="frame" x="18" y="68" width="227" height="20"/>
+                        <sliderCell key="cell" continuous="YES" state="on" alignment="left" maxValue="150" doubleValue="75" tickMarkPosition="above" sliderType="linear" id="38J-5Z-eJV"/>
+                        <connections>
+                            <binding destination="OD4-TG-2oO" name="value" keyPath="self.maxLEDs" id="A6H-Rq-20V"/>
+                            <binding destination="OD4-TG-2oO" name="enabled" keyPath="self.serialPortIsOpen" id="7xZ-cj-XzK"/>
+                        </connections>
+                    </slider>
+                    <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="MWe-wn-Ncf">
+                        <rect key="frame" x="257" y="67" width="61" height="22"/>
+                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" id="qAr-CX-Vrg">
+                            <numberFormatter key="formatter" formatterBehavior="default10_4" numberStyle="decimal" minimumIntegerDigits="1" maximumIntegerDigits="2000000000" maximumFractionDigits="3" id="maV-YX-8qf"/>
+                            <font key="font" metaFont="system"/>
+                            <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                            <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                        </textFieldCell>
+                        <connections>
+                            <binding destination="OD4-TG-2oO" name="value" keyPath="self.maxLEDs" id="hEV-yZ-ENE">
+                                <dictionary key="options">
+                                    <bool key="NSContinuouslyUpdatesValue" value="YES"/>
+                                </dictionary>
+                            </binding>
+                            <binding destination="OD4-TG-2oO" name="enabled" keyPath="self.serialPortIsOpen" id="Dos-EL-e6P"/>
                         </connections>
                     </textField>
                     <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1KM-xU-qdR">
-                        <rect key="frame" x="257" y="173" width="61" height="22"/>
+                        <rect key="frame" x="257" y="133" width="61" height="22"/>
                         <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" id="3Gt-t1-8dg">
                             <numberFormatter key="formatter" formatterBehavior="default10_4" numberStyle="decimal" minimumIntegerDigits="1" maximumIntegerDigits="2000000000" maximumFractionDigits="3" id="k24-9o-wR3">
                                 <real key="minimum" value="0.0"/>
@@ -750,12 +778,35 @@
                             <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                         </textFieldCell>
                         <connections>
-                            <action selector="takeDoubleValueFrom:" target="jpP-eA-ZyN" id="lk5-DA-XZs"/>
+                            <binding destination="OD4-TG-2oO" name="value" keyPath="self.greenValue" id="4zn-dA-gah"/>
+                            <binding destination="OD4-TG-2oO" name="enabled" keyPath="self.serialPortIsOpen" id="dcj-08-VTF"/>
                         </connections>
                     </textField>
+                    <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="GVa-t4-7jH">
+                        <rect key="frame" x="233" y="13" width="91" height="32"/>
+                        <buttonCell key="cell" type="push" title="Defaults" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="l94-1n-cdi">
+                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                            <font key="font" metaFont="system"/>
+                        </buttonCell>
+                        <connections>
+                            <action selector="reset:" target="OD4-TG-2oO" id="X3c-T1-byo"/>
+                            <binding destination="OD4-TG-2oO" name="enabled" keyPath="self.serialPortIsOpen" id="9aU-dc-Kpt"/>
+                        </connections>
+                    </button>
+                    <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="TNH-Cf-xL1">
+                        <rect key="frame" x="133" y="13" width="101" height="32"/>
+                        <buttonCell key="cell" type="push" title="Black Out" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="ouZ-ke-lAG">
+                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                            <font key="font" metaFont="system"/>
+                        </buttonCell>
+                        <connections>
+                            <action selector="clear:" target="OD4-TG-2oO" id="8qB-f9-XW5"/>
+                            <binding destination="OD4-TG-2oO" name="enabled" keyPath="self.serialPortIsOpen" id="1Za-Oi-82t"/>
+                        </connections>
+                    </button>
                 </subviews>
             </view>
-            <point key="canvasLocation" x="337" y="289.5"/>
+            <point key="canvasLocation" x="315" y="269.5"/>
         </window>
         <customObject id="OD4-TG-2oO" userLabel="LEDController" customClass="LEDController"/>
         <userDefaultsController representsSharedInstance="YES" id="4MD-IE-h0f"/>

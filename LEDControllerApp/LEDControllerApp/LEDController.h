@@ -15,9 +15,14 @@
 @property (nonatomic) double redValue;
 @property (nonatomic) double greenValue;
 @property (nonatomic) double blueValue;
+@property (nonatomic) int maxLEDs;
+
+@property (nonatomic) BOOL serialPortIsOpen;
 
 @property (nonatomic, strong) ORSSerialPortManager *serialPortManager;
 @property (nonatomic, strong) ORSSerialPort *serialPort;
+
+-(void)appWillTerminate;
 
 
 

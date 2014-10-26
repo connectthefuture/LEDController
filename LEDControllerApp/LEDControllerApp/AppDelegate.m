@@ -9,18 +9,21 @@
 #import "AppDelegate.h"
 #import <ORSSerialPort/ORSSerialPortManager.h>
 #import <ORSSerialPort/ORSSerialPort.h>
+#import "LEDController.h"
 
 @interface AppDelegate ()
 
 @property (weak) IBOutlet NSWindow *window;
+@property (weak) IBOutlet LEDController *ledController;
+
+
 @end
 
 @implementation AppDelegate
 
 - (void)applicationWillTerminate:(NSNotification *)notification
 {
-    NSArray *ports = [[ORSSerialPortManager sharedSerialPortManager] availablePorts];
-    for (ORSSerialPort *port in ports) { [port close]; }
+    [self.ledController appWillTerminate];
 }
 
 @end
